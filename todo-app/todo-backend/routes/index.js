@@ -1,17 +1,15 @@
 const express = require('express');
 const router = express.Router();
-
+const {getAsync} = require('../redis/index')
 const configs = require('../util/config')
-
-let visits = 0
+const {get} = require("mongoose");
 
 /* GET index data. */
 router.get('/', async (req, res) => {
-  visits++
-
+  const count = await getAsync('added_todos')
   res.send({
     ...configs,
-    visits
+    count
   });
 });
 
