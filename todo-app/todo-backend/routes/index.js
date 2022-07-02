@@ -5,7 +5,7 @@ const configs = require('../util/config')
 const {get} = require("mongoose");
 
 /* GET index data. */
-router.get('/', async (req, res) => {
+router.get('/statistics', async (req, res) => {
   const count = await getAsync('added_todos')
   res.send({
     ...configs,
