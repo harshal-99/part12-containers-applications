@@ -10,12 +10,12 @@ const app = express();
 
 app.use(cors());
 
-const syncTodos = async () => {
+/*const syncTodos = async () => {
 	const count = await Todo.countDocuments()
 	await setAsync('added_todos', count)
 }
 
-syncTodos()
+syncTodos()*/
 
 app.use(logger('dev'));
 app.use(express.json());
